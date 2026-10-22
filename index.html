@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Khin Sandar Yu — IT Cloud Operations, AWS, Telecom BSS/OSS and Application Support professional.">
+  <title>Khin Sandar Yu | Cloud Operations & Application Support</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6b7b;
+      --line: #e4e8ef;
+      --paper: #ffffff;
+      --page: #f4f6fa;
+      --accent: #2856a6;
+      --accent-soft: #eaf1ff;
+      --chip: #f0f4fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.7 Inter, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    .resume {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(25, 42, 70, .07);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 42px 46px 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .photo-wrap {
+      width: 142px;
+      height: 142px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #eaf1ff, #d8e4f7);
+      border: 5px solid #fff;
+      box-shadow: 0 0 0 1px var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 42px;
+      font-weight: 800;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-wrap span {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+      margin: 0 0 6px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin: 0 0 8px;
+    }
+
+    .role {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 13px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .contact-row i {
+      color: var(--accent);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 19px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 700;
+      background: white;
+      color: var(--ink);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .content {
+      padding: 8px 46px 30px;
+    }
+
+    section {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.13rem;
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    .section-title i {
+      color: var(--accent);
+      width: 22px;
+      text-align: center;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 19px;
+    }
+
+    .entry {
+      position: relative;
+      padding-left: 19px;
+      border-left: 2px solid #dce6f8;
+    }
+
+    .entry::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .entry-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 14px;
+      align-items: baseline;
+    }
+
+    .entry h3 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .company {
+      color: var(--accent);
+      font-weight: 700;
+      margin: 2px 0 7px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 4px 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project,
+    .skill-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .project h3,
+    .skill-box h3 {
+      margin: 0 0 7px;
+      font-size: .98rem;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--chip);
+      color: #34445e;
+      padding: 4px 9px;
+      border-radius: 5px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .skill-box p {
+      color: var(--muted);
+      margin: 0;
+      font-size: .92rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .simple-item {
+      margin-bottom: 12px;
+    }
+
+    .simple-item strong {
+      display: block;
+    }
+
+    footer {
+      padding: 22px 46px;
+      background: #fafbfd;
+      color: var(--muted);
+      text-align: center;
+      font-size: .84rem;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        margin: 12px auto;
+        padding: 0 10px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 28px 22px;
+        gap: 17px;
+      }
+
+      .photo-wrap {
+        width: 112px;
+        height: 112px;
+        font-size: 34px;
+      }
+
+      .content {
+        padding: 4px 22px 20px;
+      }
+
+      .grid,
+      .skills-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 20px;
+      }
+
+      .entry-top {
+        display: block;
+      }
+
+      .date {
+        display: inline-block;
+        margin-top: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <article class="resume">
+
+      <!-- PROFILE HEADER -->
+      <header class="hero">
+        <div class="photo-wrap">
+          <!-- Upload your photo as profile-photo.jpg to your repository. -->
+          <img
+            src="profile-photo.jpg"
+            alt="Khin Sandar Yu profile photo"
+            onload="this.nextElementSibling.style.display='none';"
+            onerror="this.style.display='none';"
+          >
+          <span aria-hidden="true">KSY</span>
+        </div>
+
+        <div>
+          <p class="eyebrow">Professional Portfolio</p>
+          <h1>Khin Sandar Yu</h1>
+          <p class="role">IT Cloud Operations Engineering Specialist</p>
+
+          <div class="contact-row">
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              Bangkok, Thailand
+            </span>
+
+            <span>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:khinsandaryujob@gmail.com">
+                khinsandaryujob@gmail.com
+              </a>
+            </span>
+
+            <span>
+              <i class="fa-brands fa-linkedin"></i>
+              <a
+                href="https://linkedin.com/in/khinsandaryu393"
+                target="_blank"
+                rel="noopener"
+              >LinkedIn</a>
+            </span>
+          </div>
+
+          <div class="actions">
+            <a
+              class="btn primary"
+              href="CV.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+              View / Download CV
+            </a>
+
+            <a
+              class="btn"
+              href="https://github.com/KhinSandarYu"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-github"></i>
+              GitHub Profile
+            </a>
+
+            <a
+              class="btn"
+              href="mailto:khinsandaryujob@gmail.com"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+
+        <!-- ABOUT ME -->
+        <section id="about">
+          <h2 class="section-title">
+            <i class="fa-solid fa-user"></i>
+            About Me
+          </h2>
+
+          <p class="muted">
+            IT Operations and Cloud Support professional with 10+ years
+            of experience supporting enterprise IT, telecommunications
+            applications, Linux production environments, and
+            mission-critical systems. AWS Certified Solutions Architect –
+            Associate with hands-on experience in AWS infrastructure,
+            networking, monitoring, troubleshooting, and infrastructure
+            automation.
+          </p>
+
+          <p class="muted">
+            Experienced in L1/L2/L3 support, incident and problem
+            management, root-cause analysis, change and release
+            management, production deployment validation, and
+            coordination with vendors and technical teams.
+          </p>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience">
+          <h2 class="section-title">
+            <i class="fa-solid fa-briefcase"></i>
+            Work Experience
+          </h2>
+
+          <div class="timeline">
+
+            <div class="entry">
+              <div class="entry-top">
+                <h3>Field Service &amp; Operations Engineer</h3>
+                <span class="date">2025 – Jan 2026</span>
+              </div>
+              <div class="company">D2Global IT Solutions</div>
+              <ul>
+                <li>
+                  Supported enterprise IT infrastructure and AWS
+                  operations, including EC2, IAM, VPC, VPC Peering,
+                  Auto Scaling, and security controls.
+                </li>
+                <li>
+                  Performed system health checks, incident investigation,
+                  OS maintenance, deployment validation, and post-change
+                  checks.
+                </li>
+                <li>
+                  Prepared operational documentation and coordinated
+                  issue resolution with technical teams and vendors.
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry-top">
+                <h3>Application &amp; Delivering Senior Engineer</h3>
+                <span class="date">Dec 2023 – May 2024</span>
+              </div>
+              <div class="company">MPT Telecommunications</div>
+              <ul>
+                <li>
+                  Supported enterprise application operations, system
+                  integration, UAT, migration, upgrades, and production
+                  deployment.
+                </li>
+                <li>
+                  Investigated application and database incidents and
+                  prepared technical documentation and handover materials.
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry-top">
+                <h3>Senior IT Applications &amp; Operations</h3>
+                <span class="date">Aug 2022 – Jul 2023</span>
+              </div>
+              <div class="company">ATOM Telecommunication</div>
+              <ul>
+                <li>
+                  Managed day-to-day application operations and
+                  production support for enterprise telecom systems.
+                </li>
+                <li>
+                  Performed incident triage, escalation, RCA, SLA
+                  monitoring, access management, UAT, and deployment
+                  validation.
+                </li>
+                <li>
+                  Supported BSS migration and coordinated with vendors
+                  and technical teams to resolve service issues.
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry-top">
+                <h3>Senior System Engineer</h3>
+                <span class="date">Mar 2022 – Aug 2022</span>
+              </div>
+              <div class="company">Whale Cloud Technologies</div>
+              <ul>
+                <li>
+                  Supported BSS/OSS, billing, charging, and mediation
+                  platforms with focus on stability and service
+                  availability.
+                </li>
+                <li>
+                  Used Linux tools, SQL queries, logs, and Shell scripts
+                  for troubleshooting and routine operational tasks.
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry-top">
+                <h3>Managed Services Systems Support Engineer</h3>
+                <span class="date">Mar 2014 – Mar 2022</span>
+              </div>
+              <div class="company">Huawei Technologies</div>
+              <ul>
+                <li>
+                  Provided L2/L3 production support for mission-critical
+                  OSS/BSS, mediation, billing, and charging platforms.
+                </li>
+                <li>
+                  Performed Linux administration, Oracle SQL
+                  investigation, log analysis, incident resolution,
+                  upgrades, and deployment validation.
+                </li>
+                <li>
+                  Prepared RCA reports, SOPs, troubleshooting guides,
+                  and preventive action plans under SLA requirements.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+          <h2 class="section-title">
+            <i class="fa-solid fa-gears"></i>
+            Skill Set
+          </h2>
+
+          <div class="skills-grid">
+
+            <div class="skill-box">
+              <h3>
+                <i class="fa-solid fa-cloud"></i>
+                Cloud &amp; Infrastructure
+              </h3>
+              <p>
+                AWS EC2, IAM, VPC, VPC Peering, Auto Scaling,
+                Elastic Load Balancing, RDS, S3, CloudWatch,
+                CloudFormation, Terraform, AWS CLI
+              </p>
+            </div>
+
+            <div class="skill-box">
+              <h3>
+                <i class="fa-solid fa-server"></i>
+                Systems &amp; Operations
+              </h3>
+              <p>
+                Linux (RHEL, Ubuntu, SUSE), Windows, system health checks,
+                patching, deployment validation, service availability,
+                performance monitoring
+              </p>
+            </div>
+
+            <div class="skill-box">
+              <h3>
+                <i class="fa-solid fa-database"></i>
+                Database &amp; Applications
+              </h3>
+              <p>
+                Oracle SQL, PostgreSQL, MySQL/MariaDB, application logs,
+                query analysis, BSS/OSS, billing, charging, mediation,
+                CRM-related systems
+              </p>
+            </div>
+
+            <div class="skill-box">
+              <h3>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Automation &amp; ITSM
+              </h3>
+              <p>
+                Bash/Shell, PowerShell, Python, Git, incident management,
+                problem management, change/release management, RCA,
+                SLA/KPI management
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+          <h2 class="section-title">
+            <i class="fa-solid fa-diagram-project"></i>
+            Selected Projects
+          </h2>
+
+          <div class="grid">
+
+            <div class="project">
+              <h3>AWS Multi-AZ Application Infrastructure</h3>
+              <p>
+                Built a hands-on AWS environment using VPC,
+                public/private subnets, route tables, security controls,
+                EC2, Auto Scaling, load balancing, IAM, and CloudWatch.
+              </p>
+              <div class="tags">
+                <span class="tag">AWS</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Monitoring</span>
+              </div>
+            </div>
+
+            <div class="project">
+              <h3>AWS VPC Peering &amp; Security Lab</h3>
+              <p>
+                Practised VPC connectivity, route configuration,
+                security groups, network ACLs, and connectivity
+                troubleshooting between environments.
+              </p>
+              <div class="tags">
+                <span class="tag">VPC Peering</span>
+                <span class="tag">Routing</span>
+                <span class="tag">Security</span>
+              </div>
+            </div>
+
+            <div class="project">
+              <h3>Telecom BSS/OSS Migration &amp; Support</h3>
+              <p>
+                Supported billing, charging, and mediation platform
+                migration and upgrade activities, including log/SQL
+                investigation, UAT, and deployment validation.
+              </p>
+              <div class="tags">
+                <span class="tag">BSS/OSS</span>
+                <span class="tag">Oracle SQL</span>
+                <span class="tag">UAT</span>
+              </div>
+            </div>
+
+            <div class="project">
+              <h3>Infrastructure Automation</h3>
+              <p>
+                Practised repeatable infrastructure provisioning and
+                configuration using CloudFormation, Terraform,
+                and AWS CLI.
+              </p>
+              <div class="tags">
+                <span class="tag">Terraform</span>
+                <span class="tag">CloudFormation</span>
+                <span class="tag">AWS CLI</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications">
+          <h2 class="section-title">
+            <i class="fa-solid fa-award"></i>
+            Certifications &amp; Training
+          </h2>
+
+          <ul>
+            <li>AWS Certified Solutions Architect – Associate</li>
+            <li>AWS re/Start Graduate</li>
+            <li>ISO/IEC 27001 Information Security Associate — SkillFront</li>
+            <li>Project Management Professional (PMP) — Navesse Business Academy</li>
+          </ul>
+        </section>
+
+        <!-- EDUCATION AND LANGUAGES -->
+        <section id="education">
+          <div class="two-col">
+
+            <div>
+              <h2 class="section-title">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Education
+              </h2>
+
+              <div class="simple-item">
+                <strong>Bachelor of Engineering (B.E.)</strong>
+                <span class="muted">
+                  Electronics and Communications Engineering<br>
+                  Technological University Thanlyin, Myanmar
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="section-title">
+                <i class="fa-solid fa-language"></i>
+                Languages
+              </h2>
+
+              <div class="simple-item">
+                <strong>Burmese</strong>
+                <span class="muted">Native</span>
+              </div>
+
+              <div class="simple-item">
+                <strong>English</strong>
+                <span class="muted">Professional working proficiency</span>
+              </div>
+
+              <div class="simple-item">
+                <strong>Chinese</strong>
+                <span class="muted">HSK II</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <footer>
+        © 2026 Khin Sandar Yu · Hosted on GitHub Pages
+      </footer>
+
+    </article>
+  </main>
+</body>
+</html>
